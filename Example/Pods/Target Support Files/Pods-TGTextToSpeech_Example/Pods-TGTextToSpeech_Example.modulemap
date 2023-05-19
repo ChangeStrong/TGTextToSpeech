@@ -1,0 +1,6 @@
+framework module Pods_TGTextToSpeech_Example {
+  umbrella header "Pods-TGTextToSpeech_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

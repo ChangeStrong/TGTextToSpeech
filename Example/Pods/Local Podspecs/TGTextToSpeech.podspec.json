@@ -1,6 +1,6 @@
 {
   "name": "TGTextToSpeech",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A short description of TGTextToSpeech.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/ChangeStrong/TGTextToSpeech",
@@ -13,10 +13,16 @@
   },
   "source": {
     "git": "https://github.com/ChangeStrong/TGTextToSpeech.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "13.0"
   },
-  "source_files": "TGTextToSpeech/Classes/**/*"
+  "source_files": "TGTextToSpeech/Classes/**/*.{h,m,mm,swift}",
+  "frameworks": [
+    "UIKit",
+    "MapKit",
+    "Foundation",
+    "AVFoundation"
+  ]
 }

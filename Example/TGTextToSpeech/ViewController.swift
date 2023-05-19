@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import TGTextToSpeech
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if TGAppEnviroment == 1{
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

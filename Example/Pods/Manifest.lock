@@ -16,7 +16,7 @@ PODS:
     - iOSSnapshotTestCase (~> 8.0)
     - Nimble
   - Quick (2.2.1)
-  - TGTextToSpeech (0.1.0)
+  - TGTextToSpeech (1.0.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -43,8 +43,8 @@ SPEC CHECKSUMS:
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   Nimble-Snapshots: ef281b908c604f78c8313587e25ea92c8ab513d7
   Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
-  TGTextToSpeech: 88e2643e34094c7439f6731be414f7cc9eebbb29
+  TGTextToSpeech: 789b0f78816ebfaa25332244dc09bb1dd632e812
 
-PODFILE CHECKSUM: 53a1e876c37e938b4b559836ab1fbe7c8c55d3aa
+PODFILE CHECKSUM: 5b1c038f4b819f4efe98c40c44acab149bffd4fc
 
 COCOAPODS: 1.11.3

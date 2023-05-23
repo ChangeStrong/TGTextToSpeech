@@ -13,5 +13,8 @@ import AVFoundation
 public let GlTestKey: String = "123"
 public let TGAppEnviroment:Int = 1;//0-测试环境 1-正式环境
 
+public let TGScreenHeight = UIScreen.main.bounds.size.height
+public let TGScreenWidth = UIScreen.main.bounds.size.width
+
 
 

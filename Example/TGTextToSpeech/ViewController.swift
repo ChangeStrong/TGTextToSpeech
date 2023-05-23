@@ -17,6 +17,15 @@ class ViewController: UIViewController {
         if TGAppEnviroment == 1{
             
         }
+        
+       
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        TGTextSpeechManager.shared.testPlayAudio();
     }
 
     override func didReceiveMemoryWarning() {

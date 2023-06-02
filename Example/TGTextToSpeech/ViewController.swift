@@ -17,15 +17,38 @@ class ViewController: UIViewController {
         if TGAppEnviroment == 1{
             
         }
+        self.button.frame = CGRect.init(x: 50, y: 150, width: 100, height: 50)
+        print("viewDidLoad")
+        TGTextSpeechManager.shared.statusChangeBlock = { (result,status) in
+            print("status=\(status)")
+        }
         
-       
-        
-        
+    }
+    // MARK: 懒加载
+    lazy var button: UIButton = {
+        let view = UIButton()
+        view.setTitle("test", for: UIControl.State.normal)
+        view.backgroundColor = UIColor.red
+        view.frame = CGRect.init(x: 50, y: 100, width: 100, height: 50)
+        view.addTarget(self, action: #selector(testAction), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(view)
+        return view
+    }()
+    
+    let temps = ["老张叔年轻时，曾经跟城里的有钱人当过几年的伴读书童","是村里唯一认识几个字的读书人","村里小孩子的名字"]
+    var currentIndex:Int = 0
+    @objc func testAction() -> Void {
+        let temp = temps[currentIndex]
+        TGTextSpeechManager.shared.speakChinese(temp);
+        currentIndex += 1;
+        if currentIndex > temps.count {
+            currentIndex = 0;
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        TGTextSpeechManager.shared.testPlayAudio();
+        
     }
 
     override func didReceiveMemoryWarning() {

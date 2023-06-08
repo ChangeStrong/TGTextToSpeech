@@ -18,7 +18,7 @@ public class TGTextSpeechManager: NSObject, AVSpeechSynthesizerDelegate {
     case finished
     }
    
-    var synthesizer = AVSpeechSynthesizer()
+   public var synthesizer = AVSpeechSynthesizer()
     // MARK: 公有属性
    public static let shared = TGTextSpeechManager()
     override init() {
@@ -37,6 +37,17 @@ public class TGTextSpeechManager: NSObject, AVSpeechSynthesizerDelegate {
        synthesizer.speak(utterance)
     }
     
+    public func stopSpeak(){
+        synthesizer.stopSpeaking(at: .immediate)
+    }
+    
+    public func pauseSpeak(){
+        synthesizer.pauseSpeaking(at: .immediate)
+    }
+    
+    public func continueSpeak() -> Bool{
+       return synthesizer.continueSpeaking()
+    }
     
 }
 

@@ -38,7 +38,14 @@ class ViewController: UIViewController {
     let temps = ["老张叔年轻时，曾经跟城里的有钱人当过几年的伴读书童","是村里唯一认识几个字的读书人","村里小孩子的名字"]
     var currentIndex:Int = 0
     @objc func testAction() -> Void {
+        if currentIndex >= temps.count {
+            currentIndex = 0
+        }
         let temp = temps[currentIndex]
+        if TGTextSpeechManager.shared.synthesizer.isSpeaking {
+            //停止之前的
+            TGTextSpeechManager.shared.stopSpeak()
+        }
         TGTextSpeechManager.shared.speakChinese(temp);
         currentIndex += 1;
         if currentIndex > temps.count {

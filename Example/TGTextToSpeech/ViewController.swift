@@ -18,6 +18,7 @@ class ViewController: UIViewController {
             
         }
         self.button.frame = CGRect.init(x: 50, y: 150, width: 100, height: 50)
+        self.button2.frame = CGRect.init(x: 50, y: 220, width: 100, height: 50)
         print("viewDidLoad")
         TGTextSpeechManager.shared.statusChangeBlock = { (result,status) in
             print("status=\(status)")
@@ -42,14 +43,28 @@ class ViewController: UIViewController {
             currentIndex = 0
         }
         let temp = temps[currentIndex]
-        if TGTextSpeechManager.shared.synthesizer.isSpeaking {
-            //停止之前的
-            TGTextSpeechManager.shared.stopSpeak()
-        }
+        
         TGTextSpeechManager.shared.speakChinese(temp);
         currentIndex += 1;
         if currentIndex > temps.count {
             currentIndex = 0;
+        }
+    }
+    
+    lazy var button2: UIButton = {
+        let view = UIButton()
+        view.setTitle("test2", for: UIControl.State.normal)
+        view.backgroundColor = UIColor.red
+        view.frame = CGRect.init(x: 50, y: 190, width: 100, height: 50)
+        view.addTarget(self, action: #selector(testAction2), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(view)
+        return view
+    }()
+    
+    @objc func testAction2() -> Void {
+        if TGTextSpeechManager.shared.synthesizer.isSpeaking {
+            //停止之前的
+            TGTextSpeechManager.shared.stopSpeak()
         }
     }
     

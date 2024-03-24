@@ -15,6 +15,7 @@ public class TGTextSpeechManager: NSObject, AVSpeechSynthesizerDelegate {
     case unknow
     case start
     case playing
+    case cancel
     case finished
     }
    
@@ -54,12 +55,15 @@ public class TGTextSpeechManager: NSObject, AVSpeechSynthesizerDelegate {
 
 extension TGTextSpeechManager{
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        print("didStart")
         self.statusChangeBlock?("",.start)
     }
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        self.statusChangeBlock?("",.finished)
+        print("didCancel")
+        self.statusChangeBlock?("",.cancel)
     }
     public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        print("didFinish")
         self.statusChangeBlock?("",.finished)
     }
 }
